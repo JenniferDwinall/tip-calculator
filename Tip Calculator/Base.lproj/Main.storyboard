@@ -114,20 +114,38 @@
             </objects>
             <point key="canvasLocation" x="399.5" y="154.5"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Tip Calculator-->
         <scene sceneID="FaV-UV-qqQ">
             <objects>
                 <viewController id="0Na-cO-0ey" customClass="SettingsViewController" customModule="Tip_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KLO-Yd-uIn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Default Tip Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ROB-oo-LCO">
+                                <rect key="frame" x="99" y="100" width="176" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="FG6-oo-u0A">
+                                <rect key="frame" x="16" y="150" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                    <segment title="25%"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zjN-Hw-N4i"/>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="zjN-Hw-N4i"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fyg-jX-g1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="835" y="157"/>
+            <point key="canvasLocation" x="834.5" y="156.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bK7-zp-UjR">
