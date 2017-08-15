@@ -29,13 +29,14 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         
         let defaults = UserDefaults.standard
+
         tipControl.selectedSegmentIndex = defaults.integer(forKey: "defaultTip")
-        
         let tipPercentages = [0.18, 0.2, 0.25]
-        let bill = Double(billText.text!) ?? 0
+        let bill = defaults.double(forKey: "defaultBill")
         let tip = bill * Double(tipPercentages[tipControl.selectedSegmentIndex])
         let total = bill + tip
         
+        billText.text = String(format: "%.2f", bill)
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
     }
@@ -53,6 +54,12 @@ class ViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         print("view did disappear")
+    }
+    
+    @IBAction func saveBillAmount(_ sender: AnyObject) {
+        let defaults = UserDefaults.standard
+        defaults.set(billText.text, forKey: "defaultBill")
+        defaults.synchronize()
     }
     
     @IBAction func calculateTip(_ sender: AnyObject) {
