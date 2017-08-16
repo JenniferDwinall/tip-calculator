@@ -35,10 +35,12 @@ class ViewController: UIViewController {
         let bill = defaults.double(forKey: "defaultBill")
         let tip = bill * Double(tipPercentages[tipControl.selectedSegmentIndex])
         let total = bill + tip
-        
+        let locale = Locale.current
+        let currencySymbol = locale.currencySymbol!
+
         billText.text = String(format: "%.2f", bill)
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        tipLabel.text = String(format: "%@%.2f", currencySymbol, tip)
+        totalLabel.text = String(format: "%@%.2f", currencySymbol, total)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -67,9 +69,11 @@ class ViewController: UIViewController {
         let bill = Double(billText.text!) ?? 0
         let tip = bill * Double(tipPercentages[tipControl.selectedSegmentIndex])
         let total = bill + tip
+        let locale = Locale.current
+        let currencySymbol = locale.currencySymbol!
 
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        tipLabel.text = String(format: "%@%.2f", currencySymbol, tip)
+        totalLabel.text = String(format: "%@%.2f", currencySymbol, total)
     }
 
     @IBAction func onTap(_ sender: AnyObject) {
